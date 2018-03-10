@@ -5,9 +5,9 @@
 namespace ooplab7 {
 
 	class CosmicBody {
-
+		
 	protected:
-
+		
 		Point3D location;
 		double weight;
 
@@ -16,8 +16,8 @@ namespace ooplab7 {
 		double speed;
 
 		Point3D getLocation();
-		double getSpeed();
 		double getWeight();
+		virtual void move();
 
 	};
 

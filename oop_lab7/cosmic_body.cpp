@@ -8,12 +8,12 @@ namespace ooplab7 {
 		return location;
 	}
 
-	double CosmicBody::getSpeed() {
-		return speed;
-	}
-
 	double CosmicBody::getWeight() {
 		return weight;
+	}
+
+	void CosmicBody::move()
+	{
 	}
 
 }

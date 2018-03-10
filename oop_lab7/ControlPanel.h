@@ -463,7 +463,7 @@ namespace ooplab7 {
 #pragma endregion
 
 
-// fix exception
+
 private: 
 	System::Void moveButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	
@@ -500,16 +500,20 @@ private:
 		int x;
 		try {
 			x = System::Convert::ToInt32(accelerateBy->Text);
-			printOutput("Accelerating by " + x + " m/s.");
+			
+			if (x > 0) printOutput("Accelerating by " + System::Convert::ToString(x) + " m/s.");
+			if (x < 0) printOutput("Slowing down by " + System::Convert::ToString(-x) + " m/s.");
 			while (x != 0) {
 				if (x > 0) {
 					sattelite->speed++;
 					x--;
 				}
 				if (x < 0) {
+					if (sattelite->speed == 0) break;
 					sattelite->speed--;
 					x++;
 				}
+				
 				// ADD THREADING
 				speedData->Text = System::Convert::ToString(sattelite->speed) + " m/s";
 			}
