@@ -88,12 +88,17 @@ namespace ooplab7 {
 
 
 	public: System::Windows::Forms::ListBox^  outputLog;
+
+	public:
 			void printOutput(String^ s) {
 				this->outputLog->Items->Insert(0, s);
 			}
+
 	protected:
 
 	private: Sattelite* sattelite;
+
+
 	private: System::Windows::Forms::Button^  moveButton;
 	private: System::Windows::Forms::Button^  autoPilotSwitch;
 
@@ -488,10 +493,12 @@ private:
 			autoPilotData->ForeColor = System::Drawing::Color::LimeGreen;
 			autoPilotData->Text = L"ON";
 			printOutput("Autopilot enabled.");
+			autoPilotSwitch->Text = L"DISABLE";
 		} else {
 			autoPilotData->ForeColor = System::Drawing::Color::Red;
 			autoPilotData->Text = L"OFF";
 			printOutput("Autopilot disabled.");
+			autoPilotSwitch->Text = L"ENABLE";
 		}
 	}
 	
